@@ -1,12 +1,5 @@
-<div class="ui container">
-
   <?php include('./common/header.php'); ?>
   <div class="ui grid">
-    <style type="text/css">
-      body {
-        background: #aec6cf !important;
-      }
-    </style>
     <div class="ui row">
       <div class="ui three column divided centered grid">
         <div class="five wide column">
@@ -27,7 +20,7 @@
         </div>
 
         <div class="five wide column">
-          <div class="ui card">
+          <div class="ui card centered">
             <div class="image">
               <img src="./portfolio.jpg">
             </div>
@@ -77,4 +70,3 @@
   </div>
 
   <?php include('./common/footer.php'); ?>
-</div>

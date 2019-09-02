@@ -4,26 +4,30 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+<link rel="stylesheet" type="text/css" href="/common/base.css" />
+<br>
 <div class="ui huge header centered">Welcome To Mojahed Site<i class="laptop icon"></i></div>
-<div class="ui secondary pointing menu">
-  <a class="item active">
-    Home
-  </a>
-  <a class="item" id="test">
-    About Me
-  </a>
-  <a class="item">
-    Work Experience
-  </a>
-  <a class="item">
-    Education
-  </a>
-  <a class="item">
-    Random
-  </a>
-  <div class="right menu">
-    <a class="ui item">
-      Logout
+<div class="ui inverted segment">
+  <div class="ui inverted secondary pointing menu">
+    <a class="item active">
+      Home
     </a>
+    <a class="item" href="../aboutMe.php" id="test">
+      About Me
+    </a>
+    <a class="item">
+      Work Experience
+    </a>
+    <a class="item">
+      Education
+    </a>
+    <a class="item">
+      Random
+    </a>
+    <div class="right menu">
+      <a class="ui item">
+        Logout
+      </a>
+    </div>
   </div>
 </div>
