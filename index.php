@@ -3,7 +3,7 @@
     <div class="ui row">
       <div class="ui three column divided centered grid">
         <div class="five wide column">
-          <div class="ui segment">
+          <div class="ui inverted segment">
             <p>Thanks for looking at my eportfolio! I am originally from Philadelphia,
               PA and went to Northeast High. I was previously working at Wells Fargo
               as a Bank Teller but I am now a Front End Manager at Cousin’s Supermarket.<br><br>

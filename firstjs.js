@@ -10,11 +10,11 @@ $(function () {
     })
 })
 
-// $(document).ready(function () {
-//     $('.snapchat').on('click', function () {
-//         alert('click');
-//         $('.ui.basic.modal')
-//             .modal('show')
-//             ;
-//     });
-// });
+$(document).ready(function () {
+    $('.snapchat').on('click', function () {
+        $('.snapchatModal').modal('show');
+    });
+
+    $('.ui.accordion').accordion();
+    
+});
