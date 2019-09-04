@@ -13,9 +13,9 @@
             </div>
             <div class="column">
                 <div class="ui header inverted">Follow me on social media</div> 
-                <i class="huge linkedin icon"></i>
-                <i class="huge telegram icon"></i>
-                <i class=" huge snapchat icon"></i>
+                <a href="https://www.linkedin.com/in/mojahed-ibrahim/"><i class="huge linkedin link icon"></i></a>
+                <i class="huge telegram link icon"></i>
+                <i class=" huge snapchat link icon" id="snapchat"></i>
             </div>
         </div>
     </div>
