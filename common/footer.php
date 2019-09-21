@@ -23,7 +23,8 @@
 <div class="ui basic modal snapchatModal">
     <div class="ui icon header">
         <i class="snapchat icon"></i>
-        Add Me On Snapchat!
+        Add Me On Snapchat! Buddy
+        
     </div>
     <div class="content">
         <div class="ui header centered inverted">
