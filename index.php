@@ -1,4 +1,6 @@
   <?php include('./common/header.php'); ?>
+  <?php include('./common/dbconnect.php'); ?>
+
   <div class="ui grid">
     <div class="ui row">
       <div class="ui three column divided centered grid">
