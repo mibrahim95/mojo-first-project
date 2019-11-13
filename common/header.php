@@ -7,28 +7,20 @@
 
 <link rel="stylesheet" type="text/css" href="/common/base.css" />
 <br>
+<?php require_once('./OverWatch.php');
+
+$overWatch = new OverWatch;
+$headerAndUrl = $overWatch->getHeaders();?>
 
 <div class="ui huge header centered">Welcome To Mojahed Site<i class="laptop icon"></i></div>
 <div class="ui inverted segment">
   <div class="ui inverted secondary pointing menu">
-    <a class="item navbar active" href="../index.php">
-      Home
+    <?php foreach($headerAndUrl as $headerUrl) :?>
+    
+    <a class="item navbar" href="<?=$headerUrl['url']?>">
+      <?=$headerUrl['header']?>
     </a>
-    <a class="item navbar" href="../aboutMe.php">
-      About Me
-    </a>
-    <a class="item navbar" href="../workExp.php">
-      Work Experience
-    </a>
-    <a class="item navbar" href="../education.php">
-      Education
-    </a>
-    <a class="item navbar" href="../random.php">
-      Random
-    </a>
-    <a class="item navbar" href="../suggestions.php">
-      Suggestions
-    </a>
+<?php endforeach;?>
     <div class="right menu">
       <a class="ui item">
         Logout
