@@ -16,5 +16,48 @@ $(document).ready(function () {
     });
 
     $('.ui.accordion').accordion();
-    
+
+    $('.step').on('click', function(){
+        $('.step').removeClass('active');
+        $('.educationgSeg').addClass('transition hidden');
+        $(this).addClass('active');
+        $('#'+$(this).data('seg')).removeClass('transition hidden');
+    });
+
+    $('.menu .item').tab();
+
+    $( ".sortable" ).sortable({
+        update: function(event, ui) {
+            $('.todoNum').each(function(){
+               $(this).html($(this).parents('.item').index()+1);
+            });
+        }
+    });
+    $( ".sortable" ).disableSelection();
+
+});
+
+var badgeNum = $('.todoItem').length + 1;
+$('#addTodo').on('click', function () {
+    if($('#newTodo').val() != '') {
+
+        $('#todoList').append(
+            '<div class="item todoItem">' +
+            '<div class="ui checkbox right floated">'+
+            '<input type="checkbox" class="todoComplete">'+
+            '<label></label>' +
+            '</div>'+
+            '<div class="ui red circular label left floated todoNum">' + badgeNum + '</div> '
+            + $('#newTodo').val() +
+            '</div>');
+        badgeNum = badgeNum + 1;
+    }
+});
+
+$('#todoList').on('change','.todoComplete', function () {
+   if($(this).is(':checked')){
+       $(this).parents('.item').wrap("<strike>").addClass('green inverted');
+   }else{
+       $(this).parents('.item').unwrap("<strike>").removeClass('green inverted');
+   }
 });
