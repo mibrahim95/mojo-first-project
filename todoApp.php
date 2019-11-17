@@ -1,8 +1,8 @@
-<?php include('./common/header.php'); 
- require_once('./OverWatch.php');
+<?php include('./common/header.php');
+require_once('./OverWatch.php');
 
 $overWatch = new OverWatch;
-$todos = $overWatch->getTodoListItems();?>
+$todos = $overWatch->getTodoListItems(); ?>
 
 <div class="ui four column doubling stackable grid container">
     <div class="ui row">
@@ -17,61 +17,20 @@ $todos = $overWatch->getTodoListItems();?>
             </div>
             <div class="ui segment" id="todoTest">
                 <div id="todoList" class="ui middle aligned divided list sortable">
-                <?php foreach($todos as $todo):?>
-            <div class="item todoItem">
-                        <div class="right floated content">
-                            <div class="ui negative button">Delete</div>
-                            <div class="ui checkbox">
-                                <input type="checkbox" class="todoComplete">
-                                <label></label>
+                    <?php foreach ($todos as $todo) : ?>
+                        <?php if ($todo['deleted'] != 1) : ?>
+                            <div class="item todoItem" data-id="<?= $todo['id'] ?>">
+                                <div class="right floated content">
+                                    <div class="ui negative button deleteTodo">Delete</div>
+                                    <div class="ui positive button todoComplete">Complete</div>
+                                </div>
+                                <div class="ui red circular label left floated todoNum"><?= $todo['position'] ?></div>
+                                <div class="content todoContent">
+                                    <?= $todo['todoTitle'] ?>
+                                </div>
                             </div>
-                        </div>
-                        <div class="ui red circular label left floated todoNum"><?=$todo['position']?></div>
-                        <div class="content">
-                            <?=$todo['todoTitle']?>
-                        </div>
-                    </div>
-<?php endforeach;?>
-
-                    <div class="item todoItem">
-                        <div class="right floated content">
-                            <div class="ui negative button">Delete</div>
-                            <div class="ui checkbox">
-                                <input type="checkbox" class="todoComplete">
-                                <label></label>
-                            </div>
-                        </div>
-                        <div class="ui red circular label left floated todoNum">1</div>
-                        <div class="content">
-                            Test this out
-                        </div>
-                    </div>
-                    <div class="item todoItem">
-                        <div class="right floated content">
-                            <div class="ui negative button">Delete</div>
-                            <div class="ui checkbox">
-                                <input type="checkbox" class="todoComplete">
-                                <label></label>
-                            </div>
-                        </div>
-                        <div class="ui red circular label left floated todoNum">2</div>
-                        <div class="content">
-                            learn about this
-                        </div>
-                    </div>
-                    <div class="item todoItem">
-                        <div class="right floated content">
-                            <div class="ui negative button">Delete</div>
-                            <div class="ui checkbox">
-                                <input type="checkbox" class="todoComplete">
-                                <label></label>
-                            </div>
-                        </div>
-                        <div class="ui red circular label left floated todoNum">3</div>
-                        <div class="content">
-                            does this work
-                        </div>
-                    </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </div>
                 <div class="ui large fluid action input">
                     <input type="text" id="newTodo" placeholder="Add a todo">

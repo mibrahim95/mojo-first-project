@@ -39,25 +39,45 @@ $(document).ready(function () {
 
 var badgeNum = $('.todoItem').length + 1;
 $('#addTodo').on('click', function () {
-    if($('#newTodo').val() != '') {
+    var newTodo = $('#newTodo').val();
+    if(newTodo != '') {
+
+        $.post( "./index.php", { action: "submitTodo", todoTitle: newTodo, position: badgeNum }, function( data ) {
+            console.log(data);
+          });
 
         $('#todoList').append(
             '<div class="item todoItem">' +
-            '<div class="ui checkbox right floated">'+
-            '<input type="checkbox" class="todoComplete">'+
-            '<label></label>' +
-            '</div>'+
-            '<div class="ui red circular label left floated todoNum">' + badgeNum + '</div> '
-            + $('#newTodo').val() +
+                '<div class="right floated content">'+
+                    '<div class="ui negative button"> Delete </div>'+
+                    '<div class="ui positive button todoComplete">Complete</div>'+
+                '</div>'+
+                '<div class="ui red circular label left floated todoNum">' + badgeNum + '</div> '+
+                '<div class="content todoContent">'
+                    + newTodo +
+                '</div>'+
             '</div>');
         badgeNum = badgeNum + 1;
     }
 });
 
-$('#todoList').on('change','.todoComplete', function () {
-   if($(this).is(':checked')){
-       $(this).parents('.todoItem').find('.content').wrap('<strike>').addClass('green inverted');
+$('#todoList').on('click','.todoComplete', function () {
+   if(!$(this).hasClass('completed')){
+       $(this).addClass('completed');
+       $(this).parents('.todoItem').find('.todoContent').wrap('<strike>');
+       $(this).parents('.todoItem').find('.todoNum').removeClass('red').addClass('green');
    }else{
-       $(this).parents('.todoItem').find('.content').unwrap().removeClass('green inverted');
+       $(this).removeClass('completed');
+       $(this).parents('.todoItem').find('.todoContent').unwrap().removeClass('green');
+       $(this).parents('.todoItem').find('.todoNum').addClass('red').removeClass('green');
    }
+});
+
+$('#todoList').on('click','.deleteTodo', function () {
+    var id = $(this).parents('.todoItem').data('id');
+    $.post( "./index.php", { action: "deleteTodo", id: id }, function( data ) {
+        console.log(data);
+      });
+
+
 });

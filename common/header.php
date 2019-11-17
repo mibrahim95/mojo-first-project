@@ -20,7 +20,7 @@
 $overWatch = new OverWatch;
 $headerAndUrl = $overWatch->getHeaders();?>
 
-<div class="ui huge header centered">Welcome To Mojahed Site<i class="laptop icon"></i></div>
+<div class="ui huge header centered">Welcome To Mojahed's Site <i class="laptop icon"></i></div>
 <div class="ui inverted segment">
   <div class="ui inverted secondary pointing menu">
     <?php foreach($headerAndUrl as $headerUrl) :?>

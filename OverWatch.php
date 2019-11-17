@@ -18,12 +18,27 @@ public function getHeaders(){
     $headersAndUrls = $result->fetchAll(PDO::FETCH_ASSOC);
     return $headersAndUrls;
 }
+
 public function getTodoListItems(){
-    $sql = "select position, todoTitle from todos";
+    $sql = "select id, position, todoTitle, deleted from todos";
     $result = $this->mysql->prepare($sql);
     $result->execute();
     $todos = $result->fetchAll(PDO::FETCH_ASSOC);
     return $todos;
+}
+
+public function submitTodo($todoTitle, $position){
+    $sql = "INSERT INTO todos (todoTitle, position) VALUES (:todoTitle, :position)";
+    $result = $this->mysql->prepare($sql);
+    $result->execute(['todoTitle'=>$todoTitle,'position'=>$position]);
+    return 'success';
+}
+
+public function deleteTodo($id){
+    $sql = "UPDATE todos SET deleted = 1 where id = :id";
+    $result = $this->mysql->prepare($sql);
+    $result->execute(['id'=>$id]);
+    return 'deleted';
 }
 
 }
