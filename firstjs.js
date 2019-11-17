@@ -56,8 +56,8 @@ $('#addTodo').on('click', function () {
 
 $('#todoList').on('change','.todoComplete', function () {
    if($(this).is(':checked')){
-       $(this).parents('.item').wrap("<strike>").addClass('green inverted');
+       $(this).parents('.todoItem').find('.content').wrap('<strike>').addClass('green inverted');
    }else{
-       $(this).parents('.item').unwrap("<strike>").removeClass('green inverted');
+       $(this).parents('.todoItem').find('.content').unwrap().removeClass('green inverted');
    }
 });
