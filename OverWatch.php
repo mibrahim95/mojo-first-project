@@ -41,4 +41,11 @@ public function deleteTodo($id){
     return 'deleted';
 }
 
+public function getProducts(){
+    $sql = "select product_name, price, sku from produce";
+    $result = $this->mysql->prepare($sql);
+    $result->execute();
+    $products = $result->fetchAll(PDO::FETCH_ASSOC);
+    return $products;
+}
 }

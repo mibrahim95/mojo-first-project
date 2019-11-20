@@ -81,3 +81,10 @@ $('#todoList').on('click','.deleteTodo', function () {
 
 
 });
+
+$('#searchText').on('keyup',function(){
+    var value = $(this).val().toLowerCase();
+    $("#tableToSearch tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+});
