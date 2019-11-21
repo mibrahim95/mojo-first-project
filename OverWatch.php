@@ -12,7 +12,7 @@ class OverWatch {
   }
 
 public function getHeaders(){
-    $sql = "select header,url from headers";
+    $sql = "select header,url from v49paqksf2uuhzyd.headers";
     $result = $this->mysql->prepare($sql);
     $result->execute();
     $headersAndUrls = $result->fetchAll(PDO::FETCH_ASSOC);
