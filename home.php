@@ -17,7 +17,7 @@
               the store with complete satisfaction.<br><br>
 
               I chose MIS as a major because I believe IT will change the world and I am interested
-              in a career that focuses on digital innovation.<br></p>
+              in a career that focuses on digital innovation!<br></p>
           </div>
         </div>
 
