@@ -14,6 +14,7 @@
   crossorigin="anonymous"></script>
 
 <link rel="stylesheet" type="text/css" href="/common/base.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <br>
 <?php require_once('./OverWatch.php');
 
